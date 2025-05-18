@@ -1,6 +1,6 @@
 import unittest
 
-from htmlnode import HTMLNode
+from htmlnode import HTMLNode, LeafNode
 
 
 class TestHTMLNode(unittest.TestCase):
@@ -12,6 +12,9 @@ class TestHTMLNode(unittest.TestCase):
         node = HTMLNode("div", None, None, {"href": "mateo.com", "target": "_blank"})
         print(node.props_to_html())
 
+    def test_toHTML(self):
+        node = LeafNode("p", "Hello, world!")
+        print(node.to_html())
 
 if __name__ == "__main__":
     unittest.main()
